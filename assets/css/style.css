@@ -4,11 +4,12 @@
   --color-text: #34303c;
   --color-muted: #8d889a;
   --color-border: #e7e2f0;
-  --color-bg: #f5f2fa;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-accent: #e8a23c;
-  --color-header-bg: #23262f;
-  --color-header-text: #f5f3fa;
+  --color-header-bg: #e6d9fa;
+  --color-header-text: #4b2e83;
+  --color-title: #4b2e83;
 
   --color-spurs: #4f7fe0;
   --color-actors: #f2785c;
@@ -55,7 +56,7 @@ h1, h2, h3 {
 .sidebar {
   width: var(--sidebar-width);
   flex-shrink: 0;
-  background: linear-gradient(180deg, #1a1c24 0%, var(--color-header-bg) 100%);
+  background: linear-gradient(180deg, #f1e9fc 0%, var(--color-header-bg) 100%);
   border-right: 1px solid var(--color-border);
   padding: 32px 20px;
   position: sticky;
@@ -124,7 +125,7 @@ h1, h2, h3 {
 
 .sidebar-home:hover,
 .sidebar-home.active {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(75, 46, 131, 0.1);
   color: var(--color-header-text);
   text-decoration: none;
 }
@@ -152,7 +153,7 @@ h1, h2, h3 {
 
 .nav-group-title:hover,
 .nav-group-title.active {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(75, 46, 131, 0.1);
   text-decoration: none;
 }
 
@@ -224,7 +225,7 @@ h1, h2, h3 {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: var(--color-text);
+  color: var(--color-title);
 }
 
 .home-tagline {
