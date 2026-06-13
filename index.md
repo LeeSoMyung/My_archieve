@@ -14,7 +14,7 @@ permalink: /
       Spurs
     </a>
     <a class="category-card category-card--actors" href="{{ '/actors/' | relative_url }}">
-      <span class="category-icon">🎭</span>
+      <span class="category-icon">🎬</span>
       Actors
     </a>
     <a class="category-card category-card--memories" href="{{ '/memories/' | relative_url }}">
