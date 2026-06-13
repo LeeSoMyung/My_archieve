@@ -1,17 +1,17 @@
 :root {
   --max-width: 760px;
-  --color-text: #2d2a26;
-  --color-muted: #8a8378;
-  --color-border: #e8e2d9;
-  --color-bg: #faf6f0;
-  --color-surface: #ffffff;
-  --color-accent: #d97757;
-  --color-header-bg: #2d2a26;
-  --color-header-text: #f5efe6;
+  --color-text: #e8e6e2;
+  --color-muted: #9a98a3;
+  --color-border: #2a2d36;
+  --color-bg: #14161c;
+  --color-surface: #1d2027;
+  --color-accent: #f2a65a;
+  --color-header-bg: #0f1115;
+  --color-header-text: #e8e6e2;
 
-  --color-spurs: #3b5bdb;
-  --color-actors: #c2410c;
-  --color-memories: #7048c4;
+  --color-spurs: #5b8def;
+  --color-actors: #ff6b6b;
+  --color-memories: #a78bfa;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -27,7 +27,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(45, 42, 38, 0.06) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 24px 24px;
   line-height: 1.6;
 }
@@ -53,11 +53,12 @@ h1, h2, h3 {
 
 /* Header */
 .site-header {
-  background: linear-gradient(135deg, #3a352f 0%, var(--color-header-bg) 60%);
+  background: linear-gradient(135deg, #0a0b0e 0%, var(--color-header-bg) 60%);
   color: var(--color-header-text);
   padding: 40px 0 0;
   margin-bottom: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .site-title {
@@ -76,7 +77,7 @@ h1, h2, h3 {
 
 .site-tagline {
   margin: 6px 0 24px;
-  color: #c9c0b3;
+  color: var(--color-muted);
   font-size: 1rem;
   font-style: italic;
   font-family: var(--font-display);
@@ -92,7 +93,7 @@ h1, h2, h3 {
   display: inline-block;
   font-weight: 600;
   padding: 10px 4px 12px;
-  color: #c9c0b3;
+  color: var(--color-muted);
   border-bottom: 3px solid transparent;
 }
 
@@ -114,6 +115,7 @@ h1, h2, h3 {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--color-text);
 }
 
 .home-tagline {
@@ -143,7 +145,7 @@ h1, h2, h3 {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-text);
-  box-shadow: 0 2px 10px rgba(45, 42, 38, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   position: relative;
   overflow: hidden;
@@ -165,7 +167,7 @@ h1, h2, h3 {
 
 .category-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(45, 42, 38, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-accent-card, var(--color-accent));
   border-color: var(--color-accent-card, var(--color-accent));
   text-decoration: none;
 }
@@ -208,7 +210,7 @@ h1, h2, h3 {
   padding: 32px;
   margin-bottom: 28px;
   border-radius: 16px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 16%, var(--color-surface)), var(--color-surface));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 22%, var(--color-surface)), var(--color-surface));
   border: 1px solid var(--color-border);
 }
 
@@ -240,7 +242,7 @@ h1, h2, h3 {
 }
 
 .subnav a.active {
-  color: #fff;
+  color: #14161c;
   background: var(--color-accent);
   border-color: var(--color-accent);
   text-decoration: none;
@@ -249,6 +251,7 @@ h1, h2, h3 {
 .subnav a:hover {
   text-decoration: none;
   border-color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .empty {
@@ -284,7 +287,7 @@ h1, h2, h3 {
 
 .post-list li:hover {
   transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(45, 42, 38, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .post-list a {
@@ -317,7 +320,7 @@ h1, h2, h3 {
 
 .photo-grid figure:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(45, 42, 38, 0.1);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
 
 .photo-grid img {
@@ -353,7 +356,7 @@ h1, h2, h3 {
 
 .link-list li:hover {
   transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(45, 42, 38, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .link-list a {
@@ -371,6 +374,7 @@ h1, h2, h3 {
 .post-page h1 {
   font-size: 2rem;
   margin-bottom: 4px;
+  color: var(--color-text);
 }
 
 .post-meta {
