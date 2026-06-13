@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<div class="category-page">
+  <h1>{{ page.category_title }}</h1>
+
+  <nav class="subnav">
+    <a href="{{ '/' | append: page.category | append: '/posts/' | relative_url }}"{% if page.section == 'posts' %} class="active"{% endif %}>Posts</a>
+    <a href="{{ '/' | append: page.category | append: '/photos/' | relative_url }}"{% if page.section == 'photos' %} class="active"{% endif %}>Photos</a>
+    <a href="{{ '/' | append: page.category | append: '/links/' | relative_url }}"{% if page.section == 'links' %} class="active"{% endif %}>Links</a>
+  </nav>
+
+  <div class="section-content">
+    {% if page.section == 'posts' %}
+      {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
+      {% if cat_posts.size > 0 %}
+        <ul class="post-list">
+          {% for post in cat_posts %}
+            <li>
+              <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="empty">아직 작성된 글이 없습니다.</p>
+      {% endif %}
+
+    {% elsif page.section == 'photos' %}
+      {% assign photos = site.data.photos[page.category] %}
+      {% if photos and photos.size > 0 %}
+        <div class="photo-grid">
+          {% for photo in photos %}
+            <figure>
+              <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+              {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="empty">아직 등록된 사진이 없습니다.</p>
+      {% endif %}
+
+    {% elsif page.section == 'links' %}
+      {% assign cat_links = site.data.links[page.category] %}
+      {% if cat_links and cat_links.size > 0 %}
+        <ul class="link-list">
+          {% for link in cat_links %}
+            <li>
+              <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+              {% if link.description %}<span class="link-desc"> — {{ link.description }}</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="empty">아직 등록된 링크가 없습니다.</p>
+      {% endif %}
+
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+</div>

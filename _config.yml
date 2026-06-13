@@ -1,0 +1,26 @@
+title: CrunnY CasA
+tagline: To Dare Is To Do
+description: "CrunnY CasA - personal archive"
+author: LeeSoMyung
+
+url: "https://leesomyung.github.io"
+baseurl: ""
+
+markdown: kramdown
+
+nav:
+  - title: Spurs
+    url: /spurs/
+  - title: Actors
+    url: /actors/
+  - title: Memories
+    url: /memories/
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
