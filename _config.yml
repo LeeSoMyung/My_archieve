@@ -4,7 +4,7 @@ description: "CrunnY CasA - personal archive"
 author: LeeSoMyung
 
 url: "https://leesomyung.github.io"
-baseurl: ""
+baseurl: "/My_archieve"
 
 markdown: kramdown
 
