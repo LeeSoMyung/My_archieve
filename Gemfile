@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.9.0"
-gem "ffi", "1.15.5"
+gem "ffi", "1.15.5" if RUBY_VERSION < "3.0"
 gem "kramdown-parser-gfm"
 
 group :jekyll_plugins do
