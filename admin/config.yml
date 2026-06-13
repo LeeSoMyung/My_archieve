@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "글 (Posts)"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "날짜", name: "date", widget: "datetime" }
+      - label: "카테고리"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - { label: "Spurs", value: "spurs" }
+          - { label: "Actors", value: "actors" }
+          - { label: "Memories", value: "memories" }
+      - { label: "본문", name: "body", widget: "markdown" }
+
+  - name: "links"
+    label: "링크 (Links)"
+    files:
+      - name: "links"
+        label: "링크 목록"
+        file: "_data/links.yml"
+        fields:
+          - label: "Spurs"
+            name: "spurs"
+            widget: "list"
+            default: []
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "설명", name: "description", widget: "string", required: false }
+          - label: "Actors"
+            name: "actors"
+            widget: "list"
+            default: []
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "설명", name: "description", widget: "string", required: false }
+          - label: "Memories"
+            name: "memories"
+            widget: "list"
+            default: []
+            fields:
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "설명", name: "description", widget: "string", required: false }
+
+  - name: "photos"
+    label: "사진 (Photos)"
+    files:
+      - name: "photos"
+        label: "사진 목록"
+        file: "_data/photos.yml"
+        fields:
+          - label: "Spurs"
+            name: "spurs"
+            widget: "list"
+            default: []
+            fields:
+              - { label: "이미지", name: "src", widget: "image" }
+              - { label: "대체 텍스트", name: "alt", widget: "string", required: false }
+              - { label: "캡션", name: "caption", widget: "string", required: false }
+          - label: "Actors"
+            name: "actors"
+            widget: "list"
+            default: []
+            fields:
+              - { label: "이미지", name: "src", widget: "image" }
+              - { label: "대체 텍스트", name: "alt", widget: "string", required: false }
+              - { label: "캡션", name: "caption", widget: "string", required: false }
+          - label: "Memories"
+            name: "memories"
+            widget: "list"
+            default: []
+            fields:
+              - { label: "이미지", name: "src", widget: "image" }
+              - { label: "대체 텍스트", name: "alt", widget: "string", required: false }
+              - { label: "캡션", name: "caption", widget: "string", required: false }
