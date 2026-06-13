@@ -3,13 +3,18 @@ layout: default
 ---
 <div class="category-page category-page--{{ page.category }}">
   <div class="category-hero">
-    <span class="category-hero-icon">
-      {% case page.category %}
-        {% when 'spurs' %}⚽
-        {% when 'actors' %}🎬
-        {% when 'memories' %}📷
-      {% endcase %}
-    </span>
+    {% assign icon_path = site.data.icons[page.category] %}
+    {% if icon_path and icon_path != "" %}
+      <img class="category-hero-icon category-hero-icon--img" src="{{ icon_path | relative_url }}" alt="">
+    {% else %}
+      <span class="category-hero-icon">
+        {% case page.category %}
+          {% when 'spurs' %}⚽
+          {% when 'lovers' %}💜
+          {% when 'memories' %}📷
+        {% endcase %}
+      </span>
+    {% endif %}
     <h1>{{ page.category_title }}{% if page.section %} <span class="category-hero-section">· {{ page.section | capitalize }}</span>{% endif %}</h1>
   </div>
 

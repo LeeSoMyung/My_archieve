@@ -22,7 +22,7 @@ collections:
         multiple: true
         options:
           - { label: "Spurs", value: "spurs" }
-          - { label: "Actors", value: "actors" }
+          - { label: "Lovers", value: "lovers" }
           - { label: "Memories", value: "memories" }
       - { label: "본문", name: "body", widget: "markdown" }
 
@@ -41,8 +41,8 @@ collections:
               - { label: "제목", name: "title", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
               - { label: "설명", name: "description", widget: "string", required: false }
-          - label: "Actors"
-            name: "actors"
+          - label: "Lovers"
+            name: "lovers"
             widget: "list"
             default: []
             fields:
@@ -73,8 +73,8 @@ collections:
               - { label: "이미지", name: "src", widget: "image" }
               - { label: "대체 텍스트", name: "alt", widget: "string", required: false }
               - { label: "캡션", name: "caption", widget: "string", required: false }
-          - label: "Actors"
-            name: "actors"
+          - label: "Lovers"
+            name: "lovers"
             widget: "list"
             default: []
             fields:
@@ -89,3 +89,14 @@ collections:
               - { label: "이미지", name: "src", widget: "image" }
               - { label: "대체 텍스트", name: "alt", widget: "string", required: false }
               - { label: "캡션", name: "caption", widget: "string", required: false }
+
+  - name: "icons"
+    label: "카테고리 아이콘"
+    files:
+      - name: "icons"
+        label: "아이콘 이미지"
+        file: "_data/icons.yml"
+        fields:
+          - { label: "Spurs 아이콘", name: "spurs", widget: "image", required: false, hint: "비워두면 기본 이모지(⚽)가 표시됩니다." }
+          - { label: "Lovers 아이콘", name: "lovers", widget: "image", required: false, hint: "비워두면 기본 이모지(💜)가 표시됩니다." }
+          - { label: "Memories 아이콘", name: "memories", widget: "image", required: false, hint: "비워두면 기본 이모지(📷)가 표시됩니다." }

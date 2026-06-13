@@ -7,17 +7,22 @@
   <nav class="sidebar-nav">
     <a class="sidebar-home{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
 
-    {% assign categories = "spurs,actors,memories" | split: "," %}
+    {% assign categories = "spurs,lovers,memories" | split: "," %}
     {% for cat in categories %}
       <div class="nav-group nav-group--{{ cat }}">
         <a class="nav-group-title{% if page.category == cat and page.section == nil %} active{% endif %}" href="{{ '/' | append: cat | append: '/' | relative_url }}">
-          <span class="nav-icon">
-            {% case cat %}
-              {% when 'spurs' %}⚽
-              {% when 'actors' %}🎬
-              {% when 'memories' %}📷
-            {% endcase %}
-          </span>
+          {% assign icon_path = site.data.icons[cat] %}
+          {% if icon_path and icon_path != "" %}
+            <img class="nav-icon nav-icon--img" src="{{ icon_path | relative_url }}" alt="">
+          {% else %}
+            <span class="nav-icon">
+              {% case cat %}
+                {% when 'spurs' %}⚽
+                {% when 'lovers' %}💜
+                {% when 'memories' %}📷
+              {% endcase %}
+            </span>
+          {% endif %}
           {{ cat | capitalize }}
         </a>
         <div class="nav-sublinks">

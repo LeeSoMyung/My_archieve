@@ -1,0 +1,5 @@
+# 카테고리 아이콘 이미지 경로를 지정하면 기본 이모지 대신 표시됩니다.
+# 예시: spurs: /assets/images/uploads/spurs-icon.png
+spurs: ""
+lovers: ""
+memories: ""
