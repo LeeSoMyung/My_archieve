@@ -10,14 +10,8 @@ layout: default
         {% when 'memories' %}📷
       {% endcase %}
     </span>
-    <h1>{{ page.category_title }}</h1>
+    <h1>{{ page.category_title }}{% if page.section %} <span class="category-hero-section">· {{ page.section | capitalize }}</span>{% endif %}</h1>
   </div>
-
-  <nav class="subnav">
-    <a href="{{ '/' | append: page.category | append: '/posts/' | relative_url }}"{% if page.section == 'posts' %} class="active"{% endif %}>Posts</a>
-    <a href="{{ '/' | append: page.category | append: '/photos/' | relative_url }}"{% if page.section == 'photos' %} class="active"{% endif %}>Photos</a>
-    <a href="{{ '/' | append: page.category | append: '/links/' | relative_url }}"{% if page.section == 'links' %} class="active"{% endif %}>Links</a>
-  </nav>
 
   <div class="section-content">
     {% if page.section == 'posts' %}

@@ -12,10 +12,14 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
 <body>
-  {% include header.html %}
-  <main class="container">
-    {{ content }}
-  </main>
-  {% include footer.html %}
+  <div class="layout">
+    {% include sidebar.html %}
+    <div class="main">
+      <main class="content">
+        {{ content }}
+      </main>
+      {% include footer.html %}
+    </div>
+  </div>
 </body>
 </html>
