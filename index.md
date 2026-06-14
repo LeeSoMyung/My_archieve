@@ -18,7 +18,7 @@ permalink: /
     </div>
   {% endif %}
 
-  <h2 class="home-section-title">My Pages</h2>
+  <h2 class="home-section-title">Rincones de CasA</h2>
 
   <div class="home-categories">
     <a class="category-card category-card--spurs" href="{{ '/spurs/' | relative_url }}">
