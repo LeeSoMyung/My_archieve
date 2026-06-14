@@ -90,6 +90,15 @@ collections:
               - { label: "대체 텍스트", name: "alt", widget: "string", required: false }
               - { label: "캡션", name: "caption", widget: "string", required: false }
 
+  - name: "home"
+    label: "홈 화면"
+    files:
+      - name: "home"
+        label: "홈 배너"
+        file: "_data/home.yml"
+        fields:
+          - { label: "배너 이미지", name: "banner", widget: "image", required: false, hint: "홈 화면 상단에 표시될 큰 이미지를 업로드하세요." }
+
   - name: "icons"
     label: "카테고리 아이콘"
     files:

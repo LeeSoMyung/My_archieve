@@ -1,0 +1,3 @@
+# 홈 화면 상단 배너 이미지를 지정하면 표시됩니다.
+# 예시: banner: /assets/images/uploads/home-banner.jpg
+banner: ""

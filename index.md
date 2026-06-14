@@ -8,6 +8,16 @@ permalink: /
   <h1 class="home-title">{{ site.title }}</h1>
   <p class="home-tagline">{{ site.tagline }}</p>
 
+  {% if site.data.home.banner and site.data.home.banner != "" %}
+    <div class="home-banner">
+      <img src="{{ site.data.home.banner | relative_url }}" alt="">
+    </div>
+  {% else %}
+    <div class="home-banner home-banner--empty">
+      <span>이미지를 업로드해주세요</span>
+    </div>
+  {% endif %}
+
   <div class="home-categories">
     <a class="category-card category-card--spurs" href="{{ '/spurs/' | relative_url }}">
       {% if site.data.icons.spurs and site.data.icons.spurs != "" %}
