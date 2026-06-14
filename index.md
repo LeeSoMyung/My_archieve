@@ -46,4 +46,22 @@ permalink: /
       Memories
     </a>
   </div>
+
+  <h2 class="home-section-title">최근 글</h2>
+
+  {% assign recent_posts = site.posts | slice: 0, 5 %}
+  {% if recent_posts.size > 0 %}
+    <ul class="recent-post-list">
+      {% for post in recent_posts %}
+        {% assign cat = post.categories | first %}
+        <li>
+          <span class="recent-post-category recent-post-category--{{ cat }}">{{ cat | capitalize }}</span>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="empty">아직 작성된 글이 없습니다.</p>
+  {% endif %}
 </div>
