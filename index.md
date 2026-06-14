@@ -9,8 +9,9 @@ permalink: /
   <p class="home-tagline">{{ site.tagline }}</p>
 
   {% if site.data.home.banner and site.data.home.banner != "" %}
+    {% assign banner_position = site.data.home.banner_position | default: "center" %}
     <div class="home-banner">
-      <img src="{{ site.data.home.banner | relative_url }}" alt="">
+      <img src="{{ site.data.home.banner | relative_url }}" alt="" style="object-position: {{ banner_position }};">
     </div>
   {% else %}
     <div class="home-banner home-banner--empty">

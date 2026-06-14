@@ -98,6 +98,17 @@ collections:
         file: "_data/home.yml"
         fields:
           - { label: "배너 이미지", name: "banner", widget: "image", required: false, hint: "홈 화면 상단에 표시될 큰 이미지를 업로드하세요." }
+          - label: "배너 이미지 위치"
+            name: "banner_position"
+            widget: "select"
+            default: "center"
+            hint: "이미지가 박스보다 클 경우, 어느 부분을 잘리지 않게 보여줄지 선택하세요."
+            options:
+              - { label: "중앙", value: "center" }
+              - { label: "위", value: "top" }
+              - { label: "아래", value: "bottom" }
+              - { label: "좌측", value: "left" }
+              - { label: "우측", value: "right" }
 
   - name: "icons"
     label: "카테고리 아이콘"
