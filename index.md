@@ -47,7 +47,7 @@ permalink: /
     </a>
   </div>
 
-  <h2 class="home-section-title">최근 글</h2>
+  <h2 class="home-section-title home-section-title--recent">Recent Posts</h2>
 
   {% assign recent_posts = site.posts | slice: 0, 5 %}
   {% if recent_posts.size > 0 %}

@@ -254,6 +254,10 @@ h1, h2, h3 {
   margin: 0 0 20px;
 }
 
+.home-section-title--recent {
+  margin: 36px 0 24px;
+}
+
 .home-banner {
   margin-bottom: 32px;
   border-radius: 16px;
